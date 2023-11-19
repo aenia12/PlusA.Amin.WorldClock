@@ -48,5 +48,5 @@ function showCity(event) {
 showTime();
 setInterval(showTime, 1000);
 
-let citiesSelect = document.queryselector("#city");
-citiesSelect.addEventListener("change", showCity);
+let citiesSelectElement = document.querySelector("#city");
+citiesSelectElement.addEventListener("change", showCity);
