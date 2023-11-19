@@ -5,32 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.37/moment-timezone-with-data-1970-2030.min.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <title>World Clock</title>
   </head>
   <body>
     <div class="container">
-    <h1>World Clock</h1>
+      <h1>World Clock</h1>
 
+      <select>
+        <option value="" selected>Select a city</option>
+        <option value="Europe/Madrid">Madrid</option>
+        <option value="America/Chicago">Chicago</option>
+        <option value="Europe/London">London</option>
+      </select>
 
-    <select>
-    <option value="" selected>Select a city</option>
-    <option value="Europe/Madrid">Madrid</option>
-    <option value="America/Chicago">Chicago</option>
-    <option value="Europe/London">London</option>
-</select>
-    
-
-<div class="city">
+      <div class="city">
         <h2>New York City 🇺🇸</h2>
         <div class="date">November 19th 2023</div>
-        <div class="time">4:05:15 PM</div>
-      </div>
+      <div class="time">4:05:15 <small>PM</small></div>
+</div>
+
       <div class="city">
         <h2>Los Angeles 🇺🇸</h2>
         <div class="date">November 19th 2023</div>
-        <div class="time">4:05:15 PM</div>
-</div>
+      <div class="time">4:05:15 <small>PM</small></div>
+    </div>
     <footer>
       <a
         href="https://github.com/aenia12/PlusA.Amin.TimeZoneDropdown"
