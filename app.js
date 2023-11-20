@@ -12,6 +12,19 @@ function showTime() {
     );
   }
 
+  // Dallas
+  let dallasElement = document.querySelector("#dallas");
+  if (dallasElement) {
+    let dallasDateElement = dallasElement.querySelector(".date");
+    let dallasTimeElement = dallasElement.querySelector(".time");
+    let dallasTime = moment().tz("America/Chicago");
+
+    dallasDateElement.innerHTML = dallasTime.format("MMMM Do YYYY");
+    dallasTimeElement.innerHTML = dallasTime.format(
+      "h:mm:ss [<small>]A[</small>]"
+    );
+  }
+
   // New York
   let newYorkElement = document.querySelector("#new-york");
   if (newYorkElement) {
