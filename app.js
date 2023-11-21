@@ -69,9 +69,18 @@ function retrievePosition(position) {
 }
 
 function showCurrentLocation(response) {
-  let city = document.querySelector(".city");
+  let citiesElement = document.querySelector("#cities");
   let currentCity = response.data.name;
-  city.innerHTML = currentCity;
+  let cityTime = moment.tz(moment.tz.guess());
+  citiesElement.innerHTML = `
+  <div class="city">
+      <h2>${currentCity}</h2>
+      <div class="date">${cityTime.format("MMMM	Do YYYY")}</div>
+    <div class="time">${cityTime.format("h:mm:ss")} <small>${cityTime.format(
+    "A"
+  )}</small></div>
+  </div>
+  `;
 }
 
 showTime();
