@@ -43,6 +43,7 @@ function showCity(event) {
   let cityTimeZone = event.target.value;
   if (cityTimeZone === "current") {
     cityTimeZone = moment.tz.guess();
+    findPosition();
   }
   let cityName = cityTimeZone.replace("_", " ").split("/")[1];
   let cityTime = moment().tz(cityTimeZone);
@@ -56,6 +57,25 @@ function showCity(event) {
   )}</small></div>
   </div>
   `;
+}
+
+function findPosition(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(retrievePosition);
+}
+
+function retrievePosition(position) {
+  let apiKey = "2caf9a6049c0ca7609a256c606d75f55";
+  let latitude = position.coords.latitude;
+  let longitude = position.coords.longitude;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`;
+  axios.get(apiUrl).then(showCurrentLocation);
+}
+
+function showCurrentLocation(response) {
+  let city = document.querySelector(".city");
+  let currentCity = response.data.name;
+  city.innerHTML = currentCity;
 }
 
 showTime();
