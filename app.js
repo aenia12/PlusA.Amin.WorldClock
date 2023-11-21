@@ -41,10 +41,6 @@ function showTime() {
 
 function showCity(event) {
   let cityTimeZone = event.target.value;
-  if (cityTimeZone === "current") {
-    cityTimeZone = moment.tz.guess();
-    findPosition();
-  }
   let cityName = cityTimeZone.replace("_", " ").split("/")[1];
   let cityTime = moment().tz(cityTimeZone);
   let citiesElement = document.querySelector("#cities");
@@ -83,3 +79,6 @@ setInterval(showTime, 1000);
 
 let citiesSelectElement = document.querySelector("#city");
 citiesSelectElement.addEventListener("change", showCity);
+
+let currentButton = document.querySelector("#current-button");
+currentButton.addEventListener("click", findPosition);
